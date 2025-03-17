@@ -11,8 +11,10 @@ workflows:
         PACKAGE_NAME: $PACKAGE_NAME
         GOOGLE_PLAY_TRACK: $GOOGLE_PLAY_TRACK
     scripts:
-      - name: Check Flutter version
-        script: flutter --version
+      - name: Check Flutter and Dart versions
+        script: |
+           flutter --version
+           dart --version
 
       - name: Get Flutter packages
         script: |
