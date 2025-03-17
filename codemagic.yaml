@@ -3,6 +3,7 @@ workflows:
     name: Android Workflow
     environment:
       flutter: "3.19.6"
+      xcode: latest
       groups:
         - google_play
         - keystore_reference
