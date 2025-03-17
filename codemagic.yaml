@@ -2,6 +2,7 @@ workflows:
   android-workflow:
     name: Android Workflow
     environment:
+      flutter: "3.19.6"
       groups:
         - google_play
         - keystore_reference
