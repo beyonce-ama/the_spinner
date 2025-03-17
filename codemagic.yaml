@@ -8,18 +8,18 @@ workflows:
       vars:
         PACKAGE_NAME: $PACKAGE_NAME
         GOOGLE_PLAY_TRACK: $GOOGLE_PLAY_TRACK
-    android_signing:
-      - keystore_path: /tmp/keystore.jks
-        keystore_password: $CM_KEYSTORE_PASSWORD
-        key_alias: $CM_KEY_ALIAS
-        key_password: $CM_KEY_PASSWORD
+      android_signing:
+        - keystore_path: /tmp/keystore.jks
+          keystore_password: $CM_KEYSTORE_PASSWORD
+          key_alias: $CM_KEY_ALIAS
+          key_password: $CM_KEY_PASSWORD
     scripts:
       - name: Get Flutter packages
         script: flutter pub get
-        
+
       - name: Decode and set up keystore
         script: echo $CM_KEYSTORE | base64 --decode > /tmp/keystore.jks
-        
+
       - name: Build AAB with Flutter
         script: |
           BUILD_NUMBER=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME" --tracks="$GOOGLE_PLAY_TRACK") + 1))
