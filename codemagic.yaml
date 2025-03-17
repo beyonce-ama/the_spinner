@@ -9,6 +9,9 @@ workflows:
         PACKAGE_NAME: $PACKAGE_NAME
         GOOGLE_PLAY_TRACK: $GOOGLE_PLAY_TRACK
     scripts:
+      - name: Check Flutter version
+        script: flutter --version
+
       - name: Get Flutter packages
         script: flutter pub get
 
