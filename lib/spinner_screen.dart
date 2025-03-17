@@ -115,12 +115,14 @@ Widget build(BuildContext context) {
   middle: Text(
     "Spinner", 
     style: TextStyle(
+    color: isDarkMode ? Colors.deepPurple.shade100 : Colors.deepPurple.shade700,
       fontSize: 20, fontWeight: FontWeight.w600),
   ),
   trailing: CupertinoButton(
     padding: EdgeInsets.zero, 
     child: Icon(
       CupertinoIcons.info_circle_fill, 
+      color: Colors.deepPurple, 
       size: 26, 
     ),
     onPressed: () {
@@ -249,6 +251,7 @@ Widget build(BuildContext context) {
                   ),
                   const SizedBox(width: 10),
                   CupertinoButton(
+                color: Colors.deepPurple.shade300,
                 onPressed: addChoice,
                 child: const Text("Add Choice", style: TextStyle(color: Colors.white)),
               ),
@@ -260,6 +263,7 @@ Widget build(BuildContext context) {
                 min: 1,
                 max: 10,
                 divisions: 9,
+                activeColor: Colors.deepPurple.shade400,
                 onChanged: (value) {
                   setState(() {
                     spinDuration = value.toInt();
@@ -272,6 +276,7 @@ Widget build(BuildContext context) {
                 margin: const EdgeInsets.symmetric(vertical: 10),
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
+                  color: isDarkMode ? Colors.deepPurple.shade200 : Colors.white,
                   borderRadius: BorderRadius.circular(12),
                   boxShadow: [
                     BoxShadow(
@@ -302,12 +307,14 @@ Widget build(BuildContext context) {
                                     style: TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold,
+                                      color: showEntries ? Colors.white : Colors.white, 
                                     ),
                                   ),
                                   const SizedBox(width: 5),
                                   Container(
                                     padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                                     decoration: BoxDecoration(
+                                      color: showEntries ? Colors.deepPurple.shade300 : Colors.deepPurple.shade700, 
                                       borderRadius: BorderRadius.circular(12),
                                     ),
                                     child: Text(
@@ -339,12 +346,14 @@ Widget build(BuildContext context) {
                                       style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold,
+                                        color: !showEntries ? Colors.white : Colors.white, 
                                       ),
                                     ),
                                     const SizedBox(width: 5),
                                     Container(
                                       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                                       decoration: BoxDecoration(
+                                        color: showEntries ? Colors.deepPurple.shade700 : Colors.deepPurple.shade300, 
                                         borderRadius: BorderRadius.circular(12),
                                       ),
                                       child: Text(
@@ -385,6 +394,7 @@ Widget build(BuildContext context) {
                           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
                           margin: const EdgeInsets.symmetric(vertical: 4),
                           decoration: BoxDecoration(
+                            color: isDarkMode ? Colors.deepPurple.shade800 : Colors.deepPurple.shade100,
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Row(
@@ -409,7 +419,7 @@ Widget build(BuildContext context) {
                         children: history.map((item) => Padding(
                           padding: const EdgeInsets.symmetric(vertical: 4),
                           child: Text(item, style: TextStyle(fontSize: 16, 
-                           )
+                          color: isDarkMode ? Colors.deepPurple.shade800 : Colors.deepPurple.shade800,)
                           ),
                         )).toList(),
                       ),
